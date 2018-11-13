@@ -1,6 +1,8 @@
 require "./quoted_printable/*"
 
 module QuotedPrintable
+  VERSION = "0.1.1"
+
   extend self
 
   class Error < Exception; end
@@ -117,8 +119,12 @@ module QuotedPrintable
       when CharType::EQUAL
         bstr = "#{chars.next_char}#{chars.next_char}"
         unless bstr == "\r\n"
-          yield bstr.to_u8(16)
-          i += 1
+          if bstr =~ /\A[0-9A-fa-f]{2}\z/
+            yield bstr.to_u8(16)
+            i += 1
+          else
+            raise InvalidEncodedData.new("=" + bstr)
+          end
         end
       else
         raise InvalidEncodedData.new(char)

@@ -29,7 +29,7 @@ data = <<-HTM
 </html>
 HTM
 
-encoded = QuatedPrintable.encode(data)
+encoded = QuotedPrintable.encode(data)
 # => <html lang=3D"ja">
 #    <head>
 #      <title>=E6=97=A5=E6=9C=AC=E8=AA=9E=E3=82=BF=E3=82=A4=E3=83=88=E3=83=AB</t=
