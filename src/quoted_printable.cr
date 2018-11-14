@@ -1,5 +1,3 @@
-require "./quoted_printable/*"
-
 module QuotedPrintable
   VERSION = "0.1.1"
 
