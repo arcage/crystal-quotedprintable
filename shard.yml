@@ -1,9 +1,9 @@
 name: quoted_printable
-version: 0.1.1
+version: 0.1.2
 
 authors:
   - ʕ·ᴥ·ʔAKJ <arcage@denchu.org>
 
-crystal: 0.27.0
+crystal: crystal: ">= 0.27.0, < 2.0.0"
 
 license: MIT
